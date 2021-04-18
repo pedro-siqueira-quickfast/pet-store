@@ -9,3 +9,16 @@
 </div>
 
 <app-categories-featured></app-categories-featured>
+
+<section class="container grid" *ngIf="productsHighlights">
+    <div class="row">
+        <div class="col-12">
+            <h2>Produtos em destaque</h2>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <div class="col" *ngFor="let product of productsHighlights">
+            <app-product-item [product]="product"></app-product-item>
+        </div>
+    </div>
+</section>

@@ -1,4 +1,4 @@
-import { observable, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Category } from '../interfaces/category';
 
 export class CategoriesServiceMock {

@@ -13,10 +13,12 @@ export interface Product {
     installment_count: number;
     featured: boolean;
     animal_type: AnimalType;
+    status: string;
     category: string;
     subcategory: string;
     url: string;
     created_at: string;
+    key: string;
 }
 
 export interface ProductsGetResponse {

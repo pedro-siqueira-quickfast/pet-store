@@ -13,7 +13,7 @@ describe('CategoriesService', () => {
     TestBed.configureTestingModule({
       imports:[
         HttpClientTestingModule
-      ]
+      ],
     });
     service = TestBed.inject(CategoriesService);
     httpTestingController = TestBed.inject(HttpTestingController);
