@@ -14,19 +14,23 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { ProductComponent } from './pages/product/product.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     CategoriesFeaturedComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgxUsefulSwiperModule,
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule,

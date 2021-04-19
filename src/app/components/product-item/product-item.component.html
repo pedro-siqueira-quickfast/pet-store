@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [routerLink]="['/product', product.id]">
     <img class="image-fluid" mat-card-image src="{{product.featured_image}}"/>
     <mat-card-title>
         <h4>{{product.name}}</h4>

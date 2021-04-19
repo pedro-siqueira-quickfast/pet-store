@@ -2,9 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductsService } from 'src/app/services/products.service';
 import { ProductServiceMock } from 'src/app/mocks/products-mock';
 import { ProductItemComponent } from './product-item.component';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { CategoriesFeaturedComponent } from '../categories-featured/categories-featured.component';
+import { MatIcon } from '@angular/material/icon';
+import { MatCard, MatCardContent, MatCardModule, MatCardTitle } from '@angular/material/card';
 import { MockComponents } from 'ng-mocks';
 
 describe('ProductItemComponent', () => {
@@ -14,7 +13,15 @@ describe('ProductItemComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [],
-      declarations: [ ProductItemComponent, CategoriesFeaturedComponent ],
+      declarations: [ 
+        ProductItemComponent,
+        MockComponents(
+          MatIcon,
+          MatCard,
+          MatCardTitle,
+          MatCardContent
+        )
+      ],
       providers: [{
         provide: ProductsService,
         useClass: ProductServiceMock

@@ -1,0 +1,52 @@
+<div class="breadcrumbs">
+    dashboard > {{ product.animal_type }} > {{ product.category }} > {{ product.subcategory }}
+</div>
+<div class="container grid">
+    <div class="row">
+            <div class="col-4">
+                <swiper [config]="swiperConfig" class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngFor="let image of product.images">
+                            <img [src]="image">
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </swiper>
+            </div>
+        <div class="col-4">
+            <h1>{{product.name}}</h1>
+            <span *ngFor="let star of [1, 2, 3, 4, 5]">
+                <mat-icon>{{ (product.rating_stars >= star ? 'star' : (product.rating_stars - (star-1) >= 0.5) ? 'star_half' : 'star_border') }}</mat-icon>
+            </span>
+            <span>({{ product.rating_count }})</span>
+            <p>{{ product.description }}</p>
+        </div>
+        <div class="col-4">
+            <div *ngIf="product.promotional_value">
+                <p style="text-decoration: line-through" class="old-value">{{product.value | currency: "BRL" }}</p>
+                <span class="col-2">
+                    {{ product.promotional_value | currency: "BRL" }}
+                </span>
+                <span class="col-2">
+                    Para assinantes
+                </span>
+            </div>
+            <div>
+                <span class="col-2">
+                    {{ product.value | currency: "BRL" }}
+                </span>
+                <span *ngIf="product.installment_available" class="col-2">
+                    ou até {{ product.installment_count }}x {{ product.value | currency: "BRL" }}
+                </span>
+            </div>
+            <div class="col-4">
+                <button mat-flat-button color="accent">ADICIONAR AO CARRINHO</button>
+            </div>
+            <div class="col-4">
+                <button mat-flat-button color="accent">ASSINAR O PRODUTO</button>
+            </div>
+        </div>
+    </div>
+
+</div>
